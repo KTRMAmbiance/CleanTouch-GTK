@@ -1,0 +1,409 @@
+@define-color bg_color #9FBFFF;
+@define-color fg_color #FFFFFF;
+
+.background {
+background-image: -gtk-gradient (
+radial,
+center center, 0,
+center center, 1,
+from (shade(@bg_color, 1.05)),
+to (shade(@bg_color, 0.85)));
+
+color: shade(@bg_color, 3.5);
+
+padding: 5px;
+
+/* border: 2px solid shade(@bg_color, 3.5); */
+}
+
+separator {
+border: 1px solid shade(@bg_color, 3.5);
+margin-left: 14px;
+margin-right: 14px;
+}
+
+/* ******* */
+/* BUTTONS */
+/* ******* */
+
+button {
+border: 2px solid shade(@bg_color, 3.5);
+padding: 5px;
+margin: 2px;
+transition: 150ms;
+}
+
+button.flat {
+border: none;
+}
+
+button:disabled {
+border: 2px solid alpha(shade(@bg_color, 3.5), 0.5);
+color: alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+button:checked,
+button:active {
+background-color: shade(@bg_color, 3.5);
+color: @bg_color;
+transition: 150ms;
+} 
+
+button:checked:disabled,
+button:active:disabled {
+background-color: alpha(shade(@bg_color, 3.5), 0.5);
+color: @bg_color;
+transition: 150ms;
+}
+
+/* *************************** */
+/* CHECKBOXES AND RADIOBUTTONS */
+/* *************************** */
+
+check,
+radio {
+border: 2px solid shade(@bg_color, 3.5);
+min-height: 16px;
+min-width: 16px;
+margin: 4px;
+}
+
+radio {
+border-radius: 30px;
+}
+
+check:checked {
+color: shade(@bg_color, 3.5);
+}
+
+check:disabled,
+radio:disabled {
+border: 2px solid alpha(shade(@bg_color, 3.5), 0.5);
+color: alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+/* ******** */
+/* COMBOBOX */
+/* ******** */
+
+combobox arrow {
+-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+min-width: 20px;
+min-height: 20px;
+color: shade(@bg_color, 3.5);
+}
+
+/* *********** */
+/* ENTRY BOXES */
+/* *********** */
+
+entry {
+border-bottom: 2px solid shade(@bg_color, 3.5);
+padding: 4px;
+}
+
+entry:disabled {
+border-bottom: 2px solid alpha(shade(@bg_color, 3.5), 0.5);
+color: alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+entry:selected {
+background-color: @fg_color;
+}
+
+/* ***** */
+/* FRAME */
+/* ***** */
+
+
+
+/* ******** */
+/* LEFTPANE */
+/* ******** */
+
+
+
+/* ********* */
+/* LISTBOXES */
+/* ********* */
+
+list {
+border-left: 2px solid shade(@bg_color, 3.5);
+border-right: 2px solid shade(@bg_color, 3.5);
+padding: 4px;
+}
+
+listbox item.selected {
+background-image: -gtk-gradient (radial, center center, 0, center center, 1,
+                                 from (shade(@bg_color, 3.5)),
+                                 color-stop(0.50, alpha(@fg_color, 0)),
+                                 to (shade(@bg_color, 3.5)));
+}
+
+/* ******* */
+/* MENUBAR */
+/* ******* */
+
+menubar {
+padding: 4px;
+border-image: -gtk-gradient (linear, left top, right top,
+              from (alpha(@fg_color, 0)),
+              color-stop(0.0125, alpha(@fg_color, 0)),
+              color-stop(0.0125, shade(@bg_color, 3.5)),
+              color-stop(0.9825, shade(@bg_color, 3.5)),
+              color-stop(0.9825, alpha(@fg_color, 0)),
+              to(alpha(@fg_color, 0))) 2;
+border-image-width: 0 0 2px 0;
+}
+
+menubar menuitem {
+padding-left: 8px;
+padding-right: 8px;
+margin: 1px;
+min-height: 20px;
+}
+
+menubar menuitem:active {
+background-color: @fg_color;
+color: @bg_color;
+}
+
+/* ***** */
+/* MENUS */
+/* ***** */
+
+menu {
+border: 2px solid shade(@bg_color, 3.5);
+}
+
+menu menuitem {
+min-height: 32px;
+}
+
+menu menuitem:disabled {
+color: alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+menu menuitem:hover {
+background-color: @fg_color;
+color: @bg_color;
+transition: 150ms;
+}
+
+menu arrow {
+color: shade(@bg_color, 3.5);
+min-width: 20px;
+min-height: 20px;
+}
+
+menu arrow.left {
+-gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+menu arrow.right {
+-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+menu arrow.top {
+-gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+menu arrow.bottom {
+-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/* ******** */
+/* POPOVERS */
+/* ******** */
+
+
+
+/* ************ */
+/* PROGRESSBARS */
+/* ************ */
+
+progressbar {
+min-width: 18px;
+min-height: 18px;
+}
+
+progressbar trough {
+border: 2px solid shade(@bg_color, 3.5);
+}
+
+progressbar progress {
+background-image: -gtk-gradient (radial, center center, 0, center center, 1,
+                                 from (shade(@bg_color, 3.5)),
+                                 color-stop(0.50, alpha(@fg_color, 0)),
+                                 to (shade(@bg_color, 3.5)));
+}
+
+/* ********** */
+/* SCROLLBARS */
+/* ********** */
+
+scrollbar slider {
+background-color: shade(@bg_color, 3.5);
+border: 2px solid shade(@bg_color, 3.5);
+min-width: 9px;
+min-height: 9px;
+}
+
+/* ******* */
+/* SLIDERS */
+/* ******* */
+
+scale slider {
+background-color: shade(@bg_color, 3.5);
+margin: -10px;
+}
+
+scale slider:disabled {
+background-color: alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+scale trough {
+border: 1px solid shade(@bg_color, 3.5);
+margin: 12px;
+}
+
+scale trough:disabled {
+border: 1px solid alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+scale trough:fill {
+border: 1px solid shade(@bg_color, 1.5);
+}
+
+/* ******** */
+/* SWITCHES */
+/* ******** */
+
+switch,
+switch slider{
+border: 2px solid shade(@bg_color, 3.5);
+}
+
+switch:disabled,
+switch slider:disabled {
+border: 2px solid alpha(shade(@bg_color, 3.5), 0.5);
+}
+
+switch slider {
+background-image: -gtk-gradient (
+radial,
+center center, 0,
+center center, 1,
+from (shade(@bg_color, 1.15)),
+to (shade(@bg_color, 0.85)));
+}
+
+/* **** */
+/* TABS */
+/* **** */
+
+notebook.frame > stack {
+border: 2px solid shade(@bg_color, 3.5);
+background-color: alpha(@fg_color, 0.3);
+}
+
+notebook > header.top > stack {
+border: none;
+}
+
+notebook header.top tab,
+notebook header.top tab:hover, 
+notebook header.bottom tab,
+notebook header.bottom tab:hover {
+padding: 4px 8px 4px 8px;
+border: none;
+transition: 150ms;
+}
+
+notebook header.left tab,
+notebook header.left tab:hover, 
+notebook header.right tab,
+notebook header.right tab:hover {
+padding: 8px 4px 8px 4px;
+border: none;
+transition: 150ms;
+}
+
+notebook tab:checked {
+background-color: alpha(@fg_color, 0.3);
+}
+
+notebook header.top tab:checked {
+border-top: 2px solid shade(@bg_color, 3.5);
+border-left: 2px solid shade(@bg_color, 3.5);
+border-right: 2px solid shade(@bg_color, 3.5);
+}
+
+notebook header.bottom tab:checked {
+border-bottom: 2px solid shade(@bg_color, 3.5);
+border-left: 2px solid shade(@bg_color, 3.5);
+border-right: 2px solid shade(@bg_color, 3.5);
+}
+
+notebook header.left tab:checked {
+border-top: 2px solid shade(@bg_color, 3.5);
+border-left: 2px solid shade(@bg_color, 3.5);
+border-bottom: 2px solid shade(@bg_color, 3.5);
+}
+
+notebook header.right tab:checked {
+border-top: 2px solid shade(@bg_color, 3.5);
+border-bottom: 2px solid shade(@bg_color, 3.5);
+border-right: 2px solid shade(@bg_color, 3.5);
+}
+
+notebook tab button {
+border: none;
+}
+
+/* ******** */
+/* TOOLBARS */
+/* ******** */
+
+toolbar header.top {
+border-bottom: 2px solid shade(@bg_color, 3.5);
+padding: 4px;
+}
+
+toolbar button,
+toolbar button:disabled {
+border: none;
+}
+
+menubutton:active {
+background-color: shade(@bg_color, 3.5);
+color: @bg_color;
+}
+
+.titlebar {
+background-color: shade(@bg_color, 0.85);
+border-image: -gtk-gradient (linear, left top, right top,
+              from (alpha(@fg_color, 0)),
+              color-stop(0.0375, alpha(@fg_color, 0)),
+              color-stop(0.0375, shade(@bg_color, 3.5)),
+              color-stop(0.9625, shade(@bg_color, 3.5)),
+              color-stop(0.9625, alpha(@fg_color, 0)),
+              to(alpha(@fg_color, 0))) 2;
+border-image-width: 0 0 2px 0;
+padding: 8px;
+}
+
+toolbar header.top {
+border-image: -gtk-gradient (linear, left top, right top,
+              from (alpha(@fg_color, 0)),
+              color-stop(0.0125, alpha(@fg_color, 0)),
+              color-stop(0.0125, shade(@bg_color, 3.5)),
+              color-stop(0.9825, shade(@bg_color, 3.5)),
+              color-stop(0.9825, alpha(@fg_color, 0)),
+              to(alpha(@fg_color, 0))) 2;
+border-image-width: 0 0 2px 0;
+}
+
+.titlebar button {
+border: none;
+}
